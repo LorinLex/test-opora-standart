@@ -38,7 +38,13 @@ poetry install
 
     "file-finder": {
       "command": "poetry",
-      "args": ["run", "python", "-m", "src.server"],
+      "args": [
+        "--directory=<АБСОЛЮТНЫЙ_ПУТЬ_ДО_КАТАЛОГА>/CLine/MCP/test-opora-standart/",
+        "run",
+        "python",
+        "-m",
+        "src.server"
+      ],
       "env": {
         "PYTHONPATH": "."
       },
@@ -52,6 +58,7 @@ poetry install
 ## Запуск
 
 ```bash
+cd test-opora-standart
 poetry run python -m src.server
 ```
 
@@ -75,29 +82,6 @@ poetry run python -m src.server
   "arguments": {
     "fragment": "test",
     "root_dir": "/path/to/search"
-  }
-}
-```
-
-## Интеграция с CLine
-
-Для добавления сервера в CLine выполните:
-
-1. Убедитесь, что сервер запущен
-2. Добавьте конфигурацию в settings.json CLine:
-
-```json
-{
-  "mcpServers": {
-    "file-finder": {
-      "command": "poetry",
-      "args": ["run", "python", "-m", "src.server"],
-      "env": {
-        "PYTHONPATH": "."
-      },
-      "disabled": false,
-      "autoApprove": []
-    }
   }
 }
 ```
