@@ -20,7 +20,7 @@ poetry install
 ## Запуск
 
 ```bash
-poetry run python src/server.py
+poetry run python -m src.server
 ```
 
 ## Использование
