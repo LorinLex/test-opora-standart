@@ -5,7 +5,7 @@ from mcp.server.fastmcp import FastMCP
 from mcp import McpError
 from mcp.types import ErrorData
 
-from src.file_finder import find_files_by_path_fragment
+from .file_finder import find_files_by_path_fragment
 
 
 logging.basicConfig(
@@ -18,7 +18,7 @@ mcp = FastMCP("file-finder-mcp", version="0.1.0")
 
 
 @mcp.tool()
-async def search_files(fragment: str, root_dir: str | None = None):
+async def find_files(fragment: str, root_dir: str | None = None):
     """Обрабатывает запрос на поиск файлов."""
     try:
         if not fragment:
@@ -44,3 +44,6 @@ async def search_files(fragment: str, root_dir: str | None = None):
             code=500,
             message=f"Error searching files: {str(e)}"
         ))
+
+if __name__ == "__main__":
+    mcp.run()
