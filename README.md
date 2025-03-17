@@ -11,7 +11,11 @@ pip install poetry
 ```
 
 2. Убедитесь, что установлен Python 3.10+
-3. Установите зависимости:
+3. Клонируйте проект
+```bash
+git clone https://github.com/LorinLex/test-opora-standart/ && cd test-opora-standart
+```
+5. Установите зависимости:
 
 ```bash
 poetry install
