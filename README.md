@@ -21,6 +21,34 @@ git clone https://github.com/LorinLex/test-opora-standart/ && cd test-opora-stan
 poetry install
 ```
 
+## Интеграция с CLine
+
+Для использования с Cline, добавьте конфигурацию сервера в файл настроек MCP Cline.
+Обычно файл расположен по адресу:
+
+- macOS: ~/library/support/code/user/globalstorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json
+- linux: ~/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json
+
+
+```json
+{
+  "mcpServers": {
+
+    // Другие сервера
+
+    "file-finder": {
+      "command": "poetry",
+      "args": ["run", "python", "-m", "src.server"],
+      "env": {
+        "PYTHONPATH": "."
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
 ## Запуск
 
 ```bash
